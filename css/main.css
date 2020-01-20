@@ -40,3 +40,9 @@ h3{
 li {
 	list-style: none;
 }
+.textBox{
+	display:inline-block;
+}
+.aboutInfo{
+	text-align: center;
+}
