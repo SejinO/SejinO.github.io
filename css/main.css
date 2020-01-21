@@ -33,9 +33,10 @@ h3 {
 }
 
 .nav {
+		z-index: 2;
 	padding-left: 15px;
 	text-align: left;
-	position: absolute;
+	position: fixed;
 	bottom: 15px;
 	font-size: 200%;
 	line-height: 30px;
@@ -58,4 +59,15 @@ li {
 	width: 70%;
 	margin: 0 auto;
 text-align: center;
+}
+.works{
+		display: block;
+	position: relative;
+	top: 100px
+}
+
+img{
+	z-index: 1;
+	display: block;
+	width: 500px;
 }
