@@ -1,6 +1,7 @@
 * {
 	margin: 0 auto;
 	padding: 0 auto;
+/*	min-width: 500px;*/
 }
 
 body {
@@ -66,8 +67,9 @@ text-align: center;
 	top: 100px
 }
 
-img{
+video{
 	z-index: 1;
 	display: block;
-	width: 500px;
+	width: 400px;
+	height: auto;
 }
