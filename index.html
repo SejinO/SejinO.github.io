@@ -3,19 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SejinOH</title>
-	<script src="p5.js"></script>
-	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
 	</style>
 	<link rel="stylesheet" href="css/main.css">
+	
 </head>
 
 <body>
 	<div class="home">
 		<h1 class="namelogo"><a href="index.html">SejinOH</a></h1>
 		<h3 class="gnb">Visual Programmer | Product Designer</h3>
-		<script>
+		
+		<ol class="nav">
+			<li><a href="1.html">about</a></li>
+			<li><a href="2.html">works</a></li>
+			<li><a href="3.html">contact</a></li>
+		</ol>
+	</div>
+		<script src="p5.js"></script>
+	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+	<script>
 			function setup() {
 				createCanvas(windowWidth, windowHeight);
 				noStroke();
@@ -33,11 +42,5 @@
 				ellipse(ix, height / 2, iy, iy);
 			}
 		</script>
-		<ol class="nav">
-			<li><a href="1.html">about</a></li>
-			<li><a href="2.html">works</a></li>
-			<li><a href="3.html">contact</a></li>
-		</ol>
-	</div>
 </body>
 </html>
