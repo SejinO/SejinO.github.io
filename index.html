@@ -24,10 +24,15 @@
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
 	<script>
+		var canvas;
 			function setup() {
-				createCanvas(windowWidth, windowHeight);
+				canvas = createCanvas(windowWidth, windowHeight);
 				noStroke();
 			}
+		
+		function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 			function draw() {
 				let x = mouseX;
@@ -36,9 +41,9 @@
 				let iy = height - mouseY; // Inverse Y
 				background(0);
 				fill(255, 150);
-				ellipse(x, height / 2, y, y);
+				ellipse(x, height / 2, y*0.7, y*0.7);
 				fill(100, 159);
-				ellipse(ix, height / 2, iy, iy);
+				ellipse(ix, height / 2, iy*0.7, iy*0.7);
 			}
 		</script>
 </body>

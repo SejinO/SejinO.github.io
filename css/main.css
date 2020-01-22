@@ -68,7 +68,7 @@ text-align: center;
 	top: 100px
 }
 
-video{
+video,img{
 	z-index: 1;
 	display: block;
 	width: 500px;
