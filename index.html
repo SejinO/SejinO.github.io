@@ -50,8 +50,8 @@
 		}
 
 		function draw() {
-			let dx = mouseX - width / 2;
-			let dy = mouseY - height / 2;
+			let dx = accelerationX - width / 2;
+			let dy = accelerationY - height / 2;
 			let v = createVector(-dx, -dy, 0);
 			v.div(100);
 
