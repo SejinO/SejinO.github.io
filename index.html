@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>SejinOH</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
+
 	</style>
 	<link rel="stylesheet" href="css/main.css">
 	<script>
@@ -17,6 +19,7 @@
 					e.stopPropagation();
 					return false;
 				}
+
 	</script>
 
 </head>
@@ -35,9 +38,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
 	<script>
 		var canvas;
+		let angle = 0;
 
 		function setup() {
-			canvas = createCanvas(windowWidth, windowHeight);
+			canvas = createCanvas(windowWidth, windowHeight, WEBGL);
 			noStroke();
 		}
 
@@ -46,16 +50,33 @@
 		}
 
 		function draw() {
-			let x = mouseX;
-			let y = mouseY;
-			let ix = width - mouseX; // Inverse X
-			let iy = height - mouseY; // Inverse Y
-			background(0);
-			fill(255, 150);
-			ellipse(x, height / 2, y * 0.7, y * 0.7);
-			fill(100, 159);
-			ellipse(ix, height / 2, iy * 0.7, iy * 0.7);
+			let dx = mouseX - width / 2;
+			let dy = mouseY - height / 2;
+			let v = createVector(-dx, -dy, 0);
+			v.div(100);
+
+			ambientLight(0, 0, 255, -200, 0, 0);
+			directionalLight(255, 0, 0, v);
+			//	pointLight(255, 0, 0, 200, 0, 200);
+
+			//	for (i = 0; i < 500; i += 100) {
+			//		pointLight(0, 0, 255, -200, 0, i)
+			//		pointLight(255, 0, 0, 200, 0, i);
+			//
+			//	}
+			background(175);
+			rectMode(CENTER);
+			rotateX(angle);
+			rotateY(angle * 0.3);
+			rotateZ(angle * 1.2);
+
+			noStroke();
+			ambientMaterial(255);
+			torus(150, 50);
+			angle += 0.03;
 		}
+
 	</script>
 </body>
+
 </html>
