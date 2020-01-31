@@ -1,9 +1,8 @@
 * {
-	margin: 0 auto;
+	margin: 10px auto;
 	padding: 0 auto;
 /*	min-width: 500px;*/
 }
-.scrollOff{position:fixed;overflow:hidden;height:100%;}
 
 body {
 	background-color: black;
@@ -22,13 +21,13 @@ h1 {
 	display: inline-block;
 	margin-left: 15px;
 	position: absolute;
-	top: 15px;
+	top: 5px;
 
 }
 
 h3 {
+	font-weight: 200;
 	display: inline-block;
-	padding-top: 10px;
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -40,11 +39,10 @@ h3 {
 	padding-left: 15px;
 	text-align: left;
 	position: fixed;
-	bottom: 15px;
+	bottom: 5px;
 	font-size: 200%;
 	line-height: 30px;
 }
-
 li {
 	list-style: none;
 }
@@ -55,13 +53,38 @@ li {
 	width: 70%;
 	margin: 0 auto;
 }
+.liveBox{
+		position:fixed;
+	display:block;
+/*		bottom: 5px;*/
+	right: 15px;
+	font-size: 50px;
+	animation:ball .9s ease-in Infinite Alternate;
 
+}
+@keyframes ball {
+    0% {
+        bottom:20px;
+    }
+    95% {
+    }
+    to {
+        bottom:5px;
+    } 
+}
+.liveBox:hover{
+	color:dimgray;
+	font-size: 100;
+}
 .aboutInfo {
 	position: absolute;
 	bottom: 50%;
 	width: 70%;
 	margin: 0 auto;
 text-align: center;
+}
+.aboutInfo>a:hover{
+	color:blue;
 }
 .works{
 		display: block;
@@ -72,6 +95,6 @@ text-align: center;
 img{
 	z-index: 1;
 	display: block;
-	width: 600px;
+	width: 700px;
 	height: auto;
 }

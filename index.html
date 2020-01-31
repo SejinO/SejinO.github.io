@@ -5,28 +5,21 @@
 	<meta charset="UTF-8">
 	<title>SejinOH</title>
 	<style>
-		@import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
-
+		@import url('https://fonts.googleapis.com/css?Saira+Semi+Condensed|family=Sunflower:300&display=swap');
+	</style>
+	<style>
+		.nav>li>a:hover{
+	color: dimgray;
+}
 	</style>
 	<link rel="stylesheet" href="css/main.css">
-	<script>
-
-				// body 스크롤 막음
-				function scrollOff() {
-					$('body').addClass('scrollOff').on('scroll touchmove mousewheel', function(e) {
-						e.preventDefault();
-					});
-				}
-
-	</script>
-
 </head>
 
 <body>
 	<div class="home">
 		<h1 class="namelogo"><a href="index.html">SejinOH</a></h1>
 		<h3 class="gnb">Visual Programmer | Interaction Designer</h3>
-
+		<a href="index.html" class="liveBox">Live</a>
 		<ol class="nav">
 			<li><a href="1.html">about</a></li>
 			<li><a href="2.html">works</a></li>
@@ -34,52 +27,7 @@
 		</ol>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-	<script>
-		var canvas;
-		let angle = 0;
-
-		function setup() {
-			canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-			smooth();
-			noStroke();
-		}
-
-		function windowResized() {
-			resizeCanvas(windowWidth, windowHeight);
-		}
-
-		function draw() {
-			let dx = mouseX - width / 2;
-			let dy = mouseY - height / 2;
-			let v = createVector(-dx, -dy, 0);
-			v.div(100);
-
-			ambientLight(0, 0, 255, -200, 0, 0);
-			directionalLight(255, 0, 0, v);
-			//	pointLight(255, 0, 0, 200, 0, 200);
-
-			//	for (i = 0; i < 500; i += 100) {
-			//		pointLight(0, 0, 255, -200, 0, i)
-			//		pointLight(255, 0, 0, 200, 0, i);
-			//
-			//	}
-			background(0);
-			rectMode(CENTER);
-			rotateX(angle);
-			rotateY(angle * 0.3);
-			rotateZ(angle * 1.2);
-
-			noStroke();
-			ambientMaterial(255);
-			torus(150, 50);
-			angle += 0.03;
-		}
-
-		function touchMoved() {
-
-		}
-
-	</script>
+	<script src="js/sketch.js"></script>
 </body>
 
 </html>
