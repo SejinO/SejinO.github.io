@@ -10,14 +10,12 @@
 	</style>
 	<link rel="stylesheet" href="css/main.css">
 	<script>
-		$('html, body').css({
-			'overflow': 'hidden',
-			'height': '100%'
-		});
-		$('#element').on('scroll touchmove mousewheel', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-					return false;
+
+				// body 스크롤 막음
+				function scrollOff() {
+					$('body').addClass('scrollOff').on('scroll touchmove mousewheel', function(e) {
+						e.preventDefault();
+					});
 				}
 
 	</script>
@@ -27,7 +25,7 @@
 <body>
 	<div class="home">
 		<h1 class="namelogo"><a href="index.html">SejinOH</a></h1>
-		<h3 class="gnb">Visual Programmer | Product Designer</h3>
+		<h3 class="gnb">Visual Programmer | Interaction Designer</h3>
 
 		<ol class="nav">
 			<li><a href="1.html">about</a></li>
@@ -76,9 +74,11 @@
 			torus(150, 50);
 			angle += 0.03;
 		}
-function touchMoved(){
-	
-}
+
+		function touchMoved() {
+
+		}
+
 	</script>
 </body>
 
