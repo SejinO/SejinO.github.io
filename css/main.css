@@ -77,15 +77,14 @@ li {
 	font-size: 100;
 }
 .aboutInfo {
+	
 	position: absolute;
 	bottom: 50%;
 	width: 70%;
 	margin: 0 auto;
 text-align: center;
 }
-.aboutInfo>a:hover{
-	color:blue;
-}
+
 .works{
 		display: block;
 	position: relative;
