@@ -1,20 +1,22 @@
 * {
 	margin: 10px auto;
 	padding: 0 auto;
-/*	min-width: 500px;*/
+	/*	min-width: 500px;*/
 }
 
 body {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 20px;
-
+		text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	
 }
 
 a {
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 h1 {
@@ -35,7 +37,7 @@ h3 {
 }
 
 .nav {
-		z-index: 2;
+	z-index: 2;
 	padding-left: 15px;
 	text-align: left;
 	position: fixed;
@@ -43,57 +45,90 @@ h3 {
 	font-size: 200%;
 	line-height: 30px;
 }
+
 li {
 	list-style: none;
 }
 
 .textBox {
 	display: block;
-	
+
 	width: 70%;
 	margin: 0 auto;
 }
-.liveBox{
-		position:fixed;
-	display:block;
-/*		bottom: 5px;*/
+
+.liveBox {
+	position: fixed;
+	display: block;
+	/*		bottom: 5px;*/
 	right: 15px;
 	font-size: 50px;
-	animation:ball .9s ease-in Infinite Alternate;
+	animation: ball .9s ease-in Infinite Alternate;
 
 }
+
 @keyframes ball {
-    0% {
-        bottom:20px;
-    }
-    95% {
-    }
-    to {
-        bottom:5px;
-    } 
+	0% {
+		bottom: 20px;
+	}
+
+	95% {}
+
+	to {
+		bottom: 5px;
+	}
 }
-.liveBox:hover{
-	color:dimgray;
+
+.liveBox:hover {
+	color: dimgray;
 	font-size: 100;
 }
+
 .aboutInfo {
-	
+
 	position: absolute;
 	bottom: 50%;
 	width: 70%;
 	margin: 0 auto;
-text-align: center;
+	text-align: center;
 }
 
-.works{
-		display: block;
+.works {
+	display: block;
 	position: relative;
 	top: 100px
 }
 
-img{
+img {
 	z-index: 1;
 	display: block;
 	width: 700px;
 	height: auto;
+}
+
+.wrap {
+	position: relative;
+	width: 700px;
+	height: auto;
+	margin: 0 auto;
+}
+
+/* 확대될 타겟이미지*/
+.target {
+	display: block;
+	width: 100%;
+}
+
+/* 돋보기 */
+.magnifier {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	border-radius: 100%;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 0 3px 3px rgba(0, 0, 0, 0.25);
+	display: none;
+}
+
+.namelogo {
+
 }
