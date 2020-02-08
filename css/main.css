@@ -61,14 +61,16 @@ li {
 	display: block;
 	/*		bottom: 5px;*/
 	right: 15px;
-	font-size: 50px;
-	animation: ball .9s ease-in Infinite Alternate;
+	font-weight:bold;
+	font-size: 40px;
+	animation: ball .7s ease-in Infinite Alternate;
 
 }
 
 @keyframes ball {
 	0% {
-		bottom: 20px;
+		bottom: 15px;
+		color: white;
 	}
 
 	95% {}
