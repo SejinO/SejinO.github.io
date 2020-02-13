@@ -63,7 +63,7 @@ li {
 	right: 15px;
 	font-weight:bolder;
 	font-size: 40px;
-	animation: ball .5s ease-in Infinite Alternate;
+	animation: ball 1.5s ease-in Infinite Alternate;
 
 }
 
