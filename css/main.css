@@ -59,24 +59,22 @@ li {
 .liveBox {
 	position: fixed;
 	display: block;
-	/*		bottom: 5px;*/
+			bottom: 5px;
 	right: 15px;
-	font-weight:bold;
+	font-weight:bolder;
 	font-size: 40px;
-	animation: ball .7s ease-in Infinite Alternate;
+	animation: ball .5s ease-in Infinite Alternate;
 
 }
 
 @keyframes ball {
 	0% {
-		bottom: 15px;
 		color: white;
 	}
 
 	95% {}
 
 	to {
-		bottom: 5px;
 	}
 }
 
