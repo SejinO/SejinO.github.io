@@ -26,7 +26,7 @@
 			<li><a href="3.html">contact</a></li>
 		</ol>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+	<script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
 	<script type="text/javascript">
 		let myFont;
 		let code;
@@ -87,9 +87,11 @@
 			if (!permissionGranted) {
 				return;
 			}
+			
 			noStroke();
 			fill(255, 50);
 			rect(0, 0, width, height);
+			
 			textFont(myFont);
 			textSize(500);
 			fill(0);
