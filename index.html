@@ -6,13 +6,11 @@
 	<title>SejinOH</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?Saira+Semi+Condensed|family=Sunflower:300&display=swap');
-
 	</style>
 	<style>
 		.nav>li>a:hover {
 			color: dimgray;
 		}
-
 	</style>
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -70,24 +68,29 @@
 		}
 
 		function requsetAccess() {
-	DeviceOrientationEvent.requestPermission()
-		.then(response => {
-			if (response == 'granted') {
-				permissionGranted = true;
-			} else {
-				permissionGranted = false;
-			}
-		})
-		.catch(console.error);
-	this.remove();
-}
-		
+			DeviceOrientationEvent.requestPermission()
+				.then(response => {
+					if (response == 'granted') {
+						permissionGranted = true;
+					} else {
+						permissionGranted = false;
+					}
+				})
+				.catch(console.error);
+			this.remove();
+		}
+
 		function windowResized() {
 			resizeCanvas(windowWidth, windowHeight);
 		}
 
 		function draw() {
-			background(255);
+			if (!permissionGranted) {
+				return;
+			}
+			noStroke();
+			fill(0, 50);
+			rect(0, 0, width, height);
 			textFont(myFont);
 			textSize(400);
 			fill(0);
@@ -95,17 +98,14 @@
 			textSize(15);
 			fill(0, 200);
 			text("한글을 모바일기기에 맞게.", width / 2, height / 5 * 4);
-						text("흔들어주세요.", width / 2, height / 5 * 4+20);
+			text("흔들어주세요.", width / 2, height / 5 * 4 + 20);
 
-			
+
 		}
 
 		function deviceShaken() {
 			let r = floor(random(0xAC00, 0xD7A3));
 			code = r;
 		}
-
 	</script>
-</body>
-
-</html>
+</body></html>
