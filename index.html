@@ -6,11 +6,13 @@
 	<title>SejinOH</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?Saira+Semi+Condensed|family=Sunflower:300&display=swap');
+
 	</style>
 	<style>
-		.nav>li>a:hover{
-	color: dimgray;
-}
+		.nav>li>a:hover {
+			color: dimgray;
+		}
+
 	</style>
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -27,37 +29,82 @@
 		</ol>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-<script type="text/javascript">
-	let myFont;
-let code;
-let c;
-function preload() {
-  myFont = loadFont('D2CodingBold-Ver1.3-20171129.ttf');
-}
-function setup() {
-createCanvas(windowWidth,windowHeight);
-code = 0xAC00;
-  textAlign(CENTER);
+	<script type="text/javascript">
+		let myFont;
+		let code;
+		let c;
 
+		function preload() {
+			myFont = loadFont('data/D2CodingBold-Ver1.3-20171129.ttf');
+		}
+
+		function setup() {
+			createCanvas(windowWidth, windowHeight);
+			code = 0xAC00;
+			textAlign(CENTER);
+			background(255);
+			//DeviceOrientationEvent, DeviceMotionEvent
+			if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
+				//ios 13 device
+				DeviceOrientationEvent.requestPermission()
+					.catch(() => {
+						let button = createButton("버튼을 누른 후 센서를 허가해주십시오.");
+						button.style("font-size", "12px");
+						button.style("color", "white");
+						button.style("background-color", "black");
+						button.style("box-shadow", "5px 5px 5px");
+						button.center();
+						button.mousePressed(requsetAccess);
+						throw error;
+					})
+					.then(() => {
+						// on any subsequent visits
+						permissionGranted = true;
+					})
+			} else {
+				//non ios 13 device
+				// text("non ios 13 device", 100, 100);
+				permissionGranted = true;
+			}
+
+		}
+
+		function requsetAccess() {
+	DeviceOrientationEvent.requestPermission()
+		.then(response => {
+			if (response == 'granted') {
+				permissionGranted = true;
+			} else {
+				permissionGranted = false;
+			}
+		})
+		.catch(console.error);
+	this.remove();
 }
-function windowResized() {
+		
+		function windowResized() {
 			resizeCanvas(windowWidth, windowHeight);
 		}
-function draw() {
-background(255);
-  textFont(myFont);
-  textSize(400);
-    fill(0);
-  text( char(code), width/2,height/2+50);
-    textSize(15);
-    fill(0,200);
-  text("한글을 모바일기기에 맞게.",width/2,height/5*4);
-}
 
-function touchStarted(){
-  let r = floor(random(0xAC00,0xD7A3));
-  code =r;
-}
+		function draw() {
+			background(255);
+			textFont(myFont);
+			textSize(400);
+			fill(0);
+			text(char(code), width / 2, height / 2 + 50);
+			textSize(15);
+			fill(0, 200);
+			text("한글을 모바일기기에 맞게.", width / 2, height / 5 * 4);
+						text("흔들어주세요.", width / 2, height / 5 * 4+20);
+
+			
+		}
+
+		function touchStarted() {
+			let r = floor(random(0xAC00, 0xD7A3));
+			code = r;
+		}
+
 	</script>
 </body>
 
