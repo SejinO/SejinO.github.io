@@ -12,6 +12,7 @@
 			color: dimgray;
 		}
 	</style>
+	<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -26,7 +27,6 @@
 			<li><a href="3.html">contact</a></li>
 		</ol>
 	</div>
-	<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
 	<script type="text/javascript">
 		let pts = [];
 		var i = 0;
@@ -70,7 +70,7 @@
 			pop();
 			var numSeg = 500;
 			pg.strokeWeight(0.1);
-			pg.stroke(255,10);
+			pg.stroke(255, 10);
 			pg.beginShape();
 			pg.noFill();
 			for (var i = 0; i < numSeg; i++) {
