@@ -4,10 +4,16 @@
 	/*	min-width: 500px;*/
 }
 
+.can {
+	position: relative;
+	display: contents;
+	top: 10px;
+}
+
 body {
-	background-color: black;
-	color: white;
-	font-family: 'Noto Sans KR', sans-serif;
+			color: white;
+			background-color:rgb(86, 190, 178);
+			font-family: 'Jost';
 	font-size: 20px;
 }
 
@@ -17,18 +23,20 @@ a {
 }
 
 h1 {
-	display: inline-block;
-	margin-left: 15px;
-	position: absolute;
-	top: 5px;
+	margin-left: 10px;
+	position: relative;
+		top: -17px;
+		font-weight: 600;;
 
 }
-
+h2{
+	font-weight: 500;;
+}
 h3 {
 	font-weight: 200;
 	display: inline-block;
 	position: absolute;
-	top: 15px;
+	top: 10px;
 	right: 15px;
 
 }
@@ -57,9 +65,9 @@ li {
 .liveBox {
 	position: fixed;
 	display: block;
-			bottom: 5px;
+	bottom: 5px;
 	right: 15px;
-	font-weight:bolder;
+	font-weight: bolder;
 	font-size: 40px;
 	animation: ball 1.5s ease-in Infinite Alternate;
 
@@ -72,9 +80,7 @@ li {
 
 	95% {}
 
-	to {
-		
-	}
+	to {}
 }
 
 .liveBox:hover {
@@ -127,6 +133,4 @@ img {
 	display: none;
 }
 
-.namelogo {
-
-}
+.namelogo {}
