@@ -1,45 +1,73 @@
-let angle = 0;
-let w = 24;
-let ma;
-let maxD;
+var canvas = document.querySelector('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL)
-  ma = atan(1 / sqrt(2.5));
-  maxD = dist(0, 0, 200, 200);
+var c = canvas.getContext('2d');
+
+c.imageSmoothingEnabled = false;
+
+console.log(canvas);
+
+var mouse = {
+    x: undefined,
+    y: undefined
 }
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-function draw() {
-  background(86, 190, 178);
 
-  ambientLight(255, 255, 255);
-  stroke(86, 190, 178);
-  strokeWeight(10);
-  // noStroke();
-  // orbitControl();
-  // ortho(-430, 400, 400, -400, 0, 10000);
+window.addEventListener('mousemove',
+    function(event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+        console.log(mouse);
+    })
 
-  rotateX(-QUARTER_PI);
-  
-  rotateY(QUARTER_PI * angle * 0.2);
-  
-  for (let z = 0; z < 500; z += w) {
-    for (let x = 0; x < 500; x += w) {
+function Circle(x, y, dx, dy, radius) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.radius = radius;
 
-      push();
-      let d = dist(x, z, 500 / 2, 500 / 2);
-      let offset = map(d, 0, maxD, -PI, PI);
-      let a = angle + offset;
-      let h = floor(map(sin(a), -1, 1, 100, 300));
-      translate(x - 500 / 2, 0, z - 500 / 2);
-      // normalMaterial();
-      fill(h, 162, 161);
-      box(w - 2, h, w);
-      pop();
-      fill(0);
+    this.draw = function() {
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        c.strokeStyle = 'rgba(0,0,255,0.7)';
+        c.stroke();
+        c.fillStyle = 'rgba(10,10,10,0.9)';
+        c.fill();
     }
-  }
-  angle += 0.1;
+    this.update = function() {
+        if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+            this.dx = -this.dx;
+        }
+        if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+            this.dy = -this.dy;
+        }
+        this.x += this.dx;
+        this.y += this.dy;
+
+        this.draw();
+    }
 }
+
+var circleArray = [];
+//init
+for (var i = 0; i < 50; i++) {
+    var x = radius + Math.random() * (innerWidth - radius * 2);
+    var y = radius + Math.random() * (innerHeight - radius * 2);
+    var dx = (Math.random() - 0.5);
+    var dy = (Math.random() - 0.5);
+    var radius = 50 * Math.random();
+    circleArray.push(new Circle(x, y, dx, dy, radius));
+}
+
+//draw
+function animate() {
+    requestAnimationFrame(animate);
+    	c.clearRect(0, 0, innerWidth, innerHeight);
+    for (var i = 0; i < circleArray.length; i++) {
+        //	circle.update();
+        circleArray[i].update();
+    }
+}
+
+animate();

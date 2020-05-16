@@ -1,136 +1,106 @@
 * {
-	margin: 10px auto;
-	padding: 0 auto;
+	margin: 0vw auto;
+	padding: 0vw auto;
 	/*	min-width: 500px;*/
 }
 
-.can {
-	position: relative;
-	display: contents;
-	top: 10px;
+@font-face {
+	font-family: 'Helvetica Neue LT Std 73 Bold Extended';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Helvetica Neue LT Std 73 Bold Extended'), url('HelveticaNeueLTStdBdEx 1.woff') format('woff');
 }
 
 body {
-			color: white;
-			background-color:rgb(86, 190, 178);
-			font-family: 'Jost';
-	font-size: 20px;
+	color: black;
+	/*	background-color: black;*/
+	font-family: 'Helvetica Neue LT Std 73 Bold Extended';
+	font-weight: normal;
 }
 
 a {
 	text-decoration: none;
-	color: white;
-}
-
-h1 {
-	margin-left: 10px;
-	position: relative;
-		top: -17px;
-		font-weight: 600;;
-
-}
-h2{
-	font-weight: 500;;
-}
-h3 {
-	font-weight: 200;
-	display: inline-block;
-	position: absolute;
-	top: 10px;
-	right: 15px;
+	color: black;
+	/*		background-color: aquamarine;*/
 
 }
 
 .nav {
-	z-index: 2;
-	padding-left: 15px;
-	text-align: left;
+	/*	72px / 19.2px = 3.75vw;*/
+	font-size: 3.75vw;
 	position: fixed;
-	bottom: 5px;
-	font-size: 200%;
-	line-height: 30px;
+	list-style: none;
+	bottom: 1.2vw;
+	right: 2.7vw;
+	text-align: right;
+	/*	background-color: aquamarine;*/
 }
 
-li {
-	list-style: none;
+h1 {
+	/*	1vw = 1920/100 , 1vw = 19.2px , 113px = 5.88vw*/
+	font-size: 5vw;
+	position: absolute;
+	top: 1.2vw;
+	left: 2.7vw;
+	/*		background-color: aquamarine;*/
+
+
+}
+
+h3 {
+	/*	24px / 19.2px = 1.25vw*/
+	font-size: 1.25vw;
+	position: absolute;
+	top: 1.8vw;
+	right: 2.7vw;
+	/*		background-color: aquamarine;*/
+
 }
 
 .textBox {
-	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		font-size: 2vw;
 
-	width: 70%;
-	margin: 0 auto;
+	
 }
 
-.liveBox {
-	position: fixed;
-	display: block;
-	bottom: 5px;
-	right: 15px;
-	font-weight: bolder;
-	font-size: 40px;
-	animation: ball 1.5s ease-in Infinite Alternate;
-
+img{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: -1;
 }
 
-@keyframes ball {
-	0% {
-		color: white;
+@media(max-width:800px) {
+	h1 {
+		font-size: 12vw;
+		top: 1.3vw;
+		left: 1.3vw;
+
+
 	}
 
-	95% {}
+	h3 {
+		font-size: 3.5vw;
 
-	to {}
+
+		writing-mode: vertical-lr;
+
+	}
+
+	.nav {
+		font-size: 8vw;
+		padding-top: 2vw;
+		padding-right: 2vw;
+
+	}
+	.textBox {
+		font-size: 3.5vw;
+
+	
 }
 
-.liveBox:hover {
-	color: dimgray;
-	font-size: 100;
 }
-
-.aboutInfo {
-
-	position: absolute;
-	bottom: 50%;
-	width: 70%;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.works {
-	display: block;
-	position: relative;
-	top: 100px
-}
-
-img {
-	z-index: 1;
-	display: block;
-	width: 700px;
-	height: auto;
-}
-
-.wrap {
-	position: relative;
-	width: 700px;
-	height: auto;
-	margin: 0 auto;
-}
-
-/* 확대될 타겟이미지*/
-.target {
-	display: block;
-	width: 100%;
-}
-
-/* 돋보기 */
-.magnifier {
-	width: 150px;
-	height: 150px;
-	position: absolute;
-	border-radius: 100%;
-	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 0 3px 3px rgba(0, 0, 0, 0.25);
-	display: none;
-}
-
-.namelogo {}
