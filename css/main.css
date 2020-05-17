@@ -25,6 +25,8 @@ a {
 
 }
 
+/*@media screen and (max-width : 500px) {*/
+
 .nav {
 	/*	72px / 19.2px = 3.75vw;*/
 	font-size: 3.75vw;
@@ -33,6 +35,8 @@ a {
 	bottom: 1.2vw;
 	right: 2.7vw;
 	text-align: right;
+	padding-top: 2vw;
+	padding-right: 2vw;
 	/*	background-color: aquamarine;*/
 }
 
@@ -62,32 +66,35 @@ h3 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-		font-size: 2vw;
+	font-size: 2vw;
 
-	
+
 }
 
-img{
+/*}*/
+
+img {
 	position: relative;
 	left: 50%;
 	transform: translate(-50%);
 	z-index: -1;
 }
 
-@media(max-width:800px) {
+@media screen and (max-width : 767px) {
 	h1 {
 		font-size: 12vw;
 		top: 1.3vw;
 		left: 1.3vw;
-
+		position: absolute;
 
 	}
 
 	h3 {
 		font-size: 3.5vw;
-
-
+		top: 1.8vw;
+		right: 2.7vw;
 		writing-mode: vertical-lr;
+		position: absolute;
 
 	}
 
@@ -95,12 +102,22 @@ img{
 		font-size: 8vw;
 		padding-top: 2vw;
 		padding-right: 2vw;
+		bottom: 1.2vw;
+		right: 2.7vw;
+		position: fixed;
+		list-style: none;
+		text-align: right;
 
 	}
+
 	.textBox {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		font-size: 3.5vw;
 
-	
-}
+
+	}
 
 }
