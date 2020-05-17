@@ -74,7 +74,7 @@ img{
 	z-index: -1;
 }
 
-@media(max-width:800px) {
+@media(min-width:800px) {
 	h1 {
 		font-size: 12vw;
 		top: 1.3vw;
