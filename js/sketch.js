@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
   
  let locX = mouseX - width / 2;
   let locY = mouseY - height / 2;
