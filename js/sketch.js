@@ -1,76 +1,60 @@
-var canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let spheres = [];
 
-var c = canvas.getContext('2d');
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  noStroke();
 
-var innerwidth = innerWidth;
-var innerheight = innerHeight;
-
-c.imageSmoothingEnabled = false;
-
-
-window.addEventListener('resize', resizeCanvas);
-
-function resizeCanvas() {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	innerwidth = canvas.width;
-	innerheight = canvas.height;
-	animate();
+  for (let i = 0; i < 10; i++) {
+    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-5, 5), random(-5, 5), random(5, 15)));
+  }
 }
 
-function Circle(x, y, dx, dy, radius) {
-	this.x = x;
-	this.y = y;
-	this.dx = dx;
-	this.dy = dy;
-	this.radius = radius;
+function draw() {
+  background(0);
+  
+ let locX = mouseX - width / 2;
+  let locY = mouseY - height / 2;
+ ambientLight(100,150,100);
+  spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10);
+    rotateY(millis() / 1000);
 
-	this.draw = function () {
-		c.beginPath();
-		c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-		c.strokeStyle = 'rgba(0,0,255,0.7)';
-		c.stroke();
-		c.fillStyle = 'rgba(10,10,10,0.9)';
-		c.fill();
-	}
-	this.update = function (innerwidth, innerheight) {
-		if (this.x + this.radius > innerwidth || this.x - this.radius < 0) {
-			this.dx = -this.dx;
-		}
-		if (this.y + this.radius > innerheight || this.y - this.radius < 0) {
-			this.dy = -this.dy;
-		}
-		this.x += this.dx;
-		this.y += this.dy;
+  for (let i = 0; i < spheres.length; i++) {
+    spheres[i].update();
+    spheres[i].draw();
+  }
 
-		this.draw();
-	}
 }
 
-var circleArray = [];
+class Sphere {
 
-for (var i = 0; i < 20; i++) {
-	var x = radius + Math.random() * (innerwidth - radius * 2);
-	var y = radius + Math.random() * (innerheight - radius * 2);
-	var dx = (Math.random() - 0.5);
-	var dy = (Math.random() - 0.5);
-	var radius = 50 * Math.random();
-	circleArray.push(new Circle(x, y, dx, dy, radius));
+  constructor(x, y, speedx, speedy, r) {
+    this.x = x;
+    this.y = y;
+    this.speedx = speedx;
+    this.speedy = speedy;
+    this.r = r;
+  }
+
+  update() {
+    this.x += this.speedx;
+    this.y += this.speedy;
+
+    if (this.x+this.r > width / 2 || this.x+this.r < -width / 2) {
+      this.speedx *= -1;
+    }
+    if (this.y+this.r > height / 2 || this.y+this.r< -height / 2) {
+      this.speedy *= -1;
+    }
+  }
+
+  draw() {
+    push();
+    translate(this.x, this.y);
+    sphere(50);
+    pop();
+
+  }
 }
-
-
-
-
-//draw
-function animate() {
-	requestAnimationFrame(animate);
-	c.clearRect(0, 0, innerwidth, innerheight);
-	for (var i = 0; i < circleArray.length; i++) {
-		//	circle.update();
-		circleArray[i].update(innerwidth, innerheight);
-	}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
-
-animate();
