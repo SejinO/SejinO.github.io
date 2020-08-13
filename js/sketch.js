@@ -16,8 +16,6 @@ function draw() {
   let locY = mouseY - height / 2;
  ambientLight(100,150,100);
   spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10);
-    rotateY(millis() / 1000);
-
   for (let i = 0; i < spheres.length; i++) {
     spheres[i].update();
     spheres[i].draw();
