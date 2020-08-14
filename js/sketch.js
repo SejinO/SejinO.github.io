@@ -4,8 +4,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   noStroke();
 
-  for (let i = 0; i < 10; i++) {
-    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-5, 5), random(-5, 5), random(5, 15)));
+  for (let i = 0; i < 30; i++) {
+    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-3, 3), random(-3, 3), random(width*0.10, width*0.01)));
   }
 }
 
@@ -16,6 +16,8 @@ function draw() {
   let locY = mouseY - height / 2;
  ambientLight(100,150,100);
   spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10);
+    // rotateY(millis() / 1000);
+
   for (let i = 0; i < spheres.length; i++) {
     spheres[i].update();
     spheres[i].draw();
@@ -48,7 +50,7 @@ class Sphere {
   draw() {
     push();
     translate(this.x, this.y);
-    sphere(50);
+    sphere(this.r);
     pop();
 
   }
