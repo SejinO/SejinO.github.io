@@ -79,6 +79,9 @@ img {
 	transform: translate(-50%);
 	z-index: -1;
 }
+cavas{
+	display: block;
+}
 
 @media screen and (max-width : 767px) {
 	h1 {
