@@ -5,7 +5,7 @@ function setup() {
   noStroke();
 
   for (let i = 0; i < 30; i++) {
-    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-3, 3), random(-3, 3), random(width*0.10, width*0.01)));
+    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-3, 3), random(-3, 3), random(width*0.08, width*0.01)));
   }
 }
 
@@ -15,7 +15,7 @@ function draw() {
  let locX = mouseX - width / 2;
   let locY = mouseY - height / 2;
  ambientLight(100,150,100);
-  spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10);
+  spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10/map(width,0,width,0,5);
     // rotateY(millis() / 1000);
 
   for (let i = 0; i < spheres.length; i++) {
