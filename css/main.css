@@ -75,6 +75,7 @@ h3 {
 
 img {
 	position: relative;
+	width:400px;
 	left: 50%;
 	transform: translate(-50%);
 	z-index: -1;
