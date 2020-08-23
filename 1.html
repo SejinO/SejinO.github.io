@@ -4,10 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SejinOH</title>
-	<link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 	<style>
+		@font-face {
+			font-family: 'Helvetica Neue LT Std 45 Light';
+			font-style: normal;
+			font-weight: normal;
+			src: local('Helvetica Neue LT Std 45 Light'), url('css/HelveticaNeueLTStd45Light_22520.woff') format('woff');
+		}
+
 		.nav>li>a:hover {
 			color: dimgray;
+		}
+
+		.info_e {
+			font-family: 'Helvetica Neue LT Std 45 Light';
+			letter-spacing: 0.005em;
+			text-align: left;
+
+
+		}
+
+		.info_k {
+			font-family: 'Noto Sans KR', sans-serif;
+			text-align: left;
+			letter-spacing: -0.05em;
+			font-size: 80%;
+			line-height: 170%;
+
 		}
 	</style>
 	<link rel="stylesheet" href="css/main.css">
@@ -27,15 +51,19 @@
 			<li><a href="3.html">CONTACT</a></li>
 		</ul>
 		<div class="textBox">
-			<p class="aboutInfo">Born in Seoul,<br>Republic of Korea in 1999, SejinOH is a visual programmer and
-				interaction designer.
-				He is studying design convergence at Hongik University.
+			<div class="aboutInfo">
+				<p class="info_e"> Born in Seoul, republic of Korea in 1999, SejinOH is a visual programmer and interaction designer.
+					He is studying design convergence at <a href="http://www.hongik.ac.kr/" style="text-decoration: underline; ">Hongik University</a>.
+				</p>
 				<br>
-			</p>
+				<br>
+				<p class="info_k">
+					오세진은 대한민국 서울 출생이며, 인터랙티브 미디어 디자이너인 동시에 비주얼 프로그래머이다.
+					현재 홍익대학교 조형대학 디자인컨버전스학부에서 인터랙티브 미디어 디자인을 공부하고 있다.
+				</p>
+			</div>
 		</div>
 		<div class="can">
 		</div>
 	</div>
-</body>
-
-</html>
+</body></html>

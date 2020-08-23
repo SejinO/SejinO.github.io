@@ -4,14 +4,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SejinOH</title>
-			<link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
-	<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.bxslider').bxSlider({
+				mode: 'fade',
+				slideWidth: 400,
+				pager: false
+
+			});
+		});
+	</script>
 	<style>
-			.nav>li>a:hover {
+		@font-face {
+			font-family: 'Helvetica Neue LT Std 45 Light';
+			font-style: normal;
+			font-weight: normal;
+			src: local('Helvetica Neue LT Std 45 Light'), url('css/HelveticaNeueLTStd45Light_22520.woff') format('woff');
+		}
+
+		.nav>li>a:hover {
 			color: dimgray;
 		}
+
+		.info_e {
+			font-family: 'Helvetica Neue LT Std 45 Light';
+			text-align: center;
+		}
+
+		.bx-wrapper {
+			border: 0;
+			background: #fbfbfb;
+			box-shadow: none;
+			width: 400px;
+/*			z-index: -1;*/
+		}
+
+		.insta_mw {
+			text-indent: -9999999px;
+		}
 	</style>
+
 </head>
 
 <body>
@@ -23,59 +61,82 @@
 		<h3 class="gnb">VISUAL PROGRAMMER | INTERACTION DESIGNER</h3>
 		<ul class="nav">
 			<li><a href="1.html">ABOUT</a></li>
-			<li><a href="2.html"  style="color: gray">WORKS</a></li>
+			<li><a href="2.html" style="color: gray">WORKS</a></li>
 			<li><a href="3.html">CONTACT</a></li>
 		</ul>
 		<br>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
 		<div class="works">
-			<br>
-			<br>
-			<br>
-			<br><br><br>
-			<h2 style="text-align: center;">Data wave</h2>
-			<script src="js/magnifier.js"></script>
-			<div class="wrap">
-				<img class="target" data-zoom="3" src="img/dcs03.gif" alt="dcs03">
+
+			<div class="mediaArt">
+				<h2 style="text-align: center;">MEDIA ART.</h2>
+				<br>
+				<br>
+				<h4 style="text-align: center; font-family: 'Noto Sans KR', sans-serif;
+ line-height: 200%;">&#62; 마음의 일었던 파동</h4>
+			
+				<ul class="bxslider">
+					<li><img src="img/mindwave_01.png" alt=""></li>
+					<li><img src="img/mindwave_02.png" alt=""></li>
+					<li><img src="img/mindwave_03.png" alt=""></li>
+					<li><img src="img/mindwave_04.png" alt=""></li>
+					<li><img src="img/mindwave_05.png" alt=""></li>
+				</ul>
+				
+				<p class="info_e">Interactive Media Art. <br> Sound Interaction + Live Projection Mapping <br><br> <a class="insta_mw" href="https://www.instagram.com/p/CDruKDFgYLs/" style="color: deeppink; font-weight: 900;">&#62; instagram</a></p>
+				<br>
+				<br>
+			</div>
+
+			<div class="webDesign">
+				<h2 style="text-align: center;">WEB DESIGN & DEVELOPE.</h2>
+				<br>
+				<br>
+				<h4 style="text-align: center; font-family: 'Noto Sans KR', sans-serif;
+ line-height: 200%;">&#62; Open Source Lab page</h4>
+				<img src="img/osl_page.gif" alt="osl_page">
+				<p class="info_e">Web Design + p5.js Develope. <br>Open Source Lab | Hongik univ. interactive media art crew <br><br> <a class="insta_mw" href="https://www.instagram.com/p/CDruKDFgYLs/" style="color:blue; font-weight: 900;">&#62; Open Source Lab</a></p>
+				<br>
+				<br>
 			</div>
 			<br>
-						<br>
+			<br>
+			<br>
+			<div class="visualProgramming">
+				<h2 style="text-align: center;">VISUAL PROGRMMING.</h2>
+				<br>
+				<br>
+				<h4 style="text-align: center;">&#62; Data wave</h4>
+				<img src="img/dcs03.gif" alt="dcs03">
+				<p class="info_e">Interactive Motion Graphics. <br> inspired by Flowfield Algorithm</p>
+				<br>
+				<br>
+				<h4 style="text-align: center;">&#62; Sine bpm</h4>
+				<img src="img/dcs02.gif" alt="dcs02">
+				<p class="info_e">Generative Motion Graphics. <br> inspired by Sine Wave Algorithm</p>
+				<br>
+			</div>
 
-			<h2 style="text-align: center;">Sine bpm</h2>
-			<img src="img/dcs02.gif" alt="dcs02">
-			<br>
-						<br>
-
-			<h2 style="text-align: center;">Data zodiac</h2>
-			<img src="img/dcs01.gif" alt="dcs01">
-			<br>
-						<br>
-
-			<h2 style="text-align: center;">Grid web</h2>
-			<img src="img/dcs_pattern.gif" alt="dcsPattern">
-						<br>
-
-			<br>
-			<br>
-			<br>
-			<!--
-			<iframe src="img/UnderstandingBranding.pdf" width="500px" height="700" frameborder="0"></iframe>
-			<br>
-			<br>
-			<img src="img/typo01.jpeg" alt="빠삐뽀빠체">
-			<img src="img/typo_mockup.jpg" alt="typo_poster">
-			<br>
-			<br>
-			<img src="img/light_gift_concept.png" alt="Light_Gift">
-			<img src="img/light_gift.png" alt="Light_Gift">
-			<br>
--->
-			<br>
-			<br>
-			<br>
-			<br>
 		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
-</body>
-
-</html>
+</body></html>
