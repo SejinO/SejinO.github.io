@@ -56,6 +56,8 @@ class Sphere {
 
   }
 }
+
 function windowResized() {
+	redraw();
   resizeCanvas(windowWidth, windowHeight);
 }
