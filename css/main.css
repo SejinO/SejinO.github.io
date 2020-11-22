@@ -12,15 +12,15 @@
 }
 
 body {
-	color: black;
-	/*	background-color: black;*/
+	color: white;
+		background-color: black;
 	font-family: 'Helvetica Neue LT Std 73 Bold Extended';
 	font-weight: normal;
 }
 
 a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	/*		background-color: aquamarine;*/
 
 }
@@ -80,9 +80,15 @@ img {
 	transform: translate(-50%);
 	z-index: -1;
 }
-canvas{
-display: block;
+
+canvas {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
 }
+
 @media screen and (max-width : 767px) {
 	h1 {
 		font-size: 12vw;
