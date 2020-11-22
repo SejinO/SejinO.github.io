@@ -12,15 +12,15 @@
 }
 
 body {
-	color: black;
-	/*	background-color: black;*/
+	color: white;
+	background-color: black;
 	font-family: 'Helvetica Neue LT Std 73 Bold Extended';
 	font-weight: normal;
 }
 
 a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	/*		background-color: aquamarine;*/
 
 }
