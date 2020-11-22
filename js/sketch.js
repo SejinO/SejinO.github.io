@@ -1,63 +1,123 @@
-let spheres = [];
+let contents = 'designersejinoh';
+var fontSize = 30;
+let typoPG;
+let font;
+// let permissionGranted = false;
+let shake;
+function preload() {
+  font = loadFont('Helvetica.otf');
+
+}
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
-  noStroke();
+  createCanvas(400, 400);
+  smooth();
+  typoPG = createGraphics(400, 400);
+  shake =0;
+// //DeviceOrientationEvent, DeviceMotionEvent
+//   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
+//     //ios 13 device
+//     DeviceOrientationEvent.requestPermission()
+//       .catch(() => {
+//         let button = createButton("버튼을 누른 후 센서를 허가해주십시오.");
+//         button.style("font-size", "24px");
+//         button.style("background-color", "black");
+//         button.style("color", "white");
+//         button.center();
+//         button.mousePressed(requsetAccess);
+//         throw error;
+//       })
+//       .then(() => {
+//         // on any subsequent visits
+//         permissionGranted = true;
+//       })
+//   } else {
+//     //non ios 13 device
+//     // text("non ios 13 device", 100, 100);
+//     permissionGranted = true;
+//   }
+}
+// function requsetAccess() {
+//   DeviceOrientationEvent.requestPermission()
+//     .then(response => {
+//       if (response == 'granted') {
+//         permissionGranted = true;
+//       } else {
+//         permissionGranted = false;
+//       }
+//     })
+//     .catch(console.error);
+//   this.remove();
+// }
+function createPG() {
 
-  for (let i = 0; i < 30; i++) {
-    spheres.push(new Sphere(random(-width/2,width/2),random(-height/2,height/2), random(-3, 3), random(-3, 3), random(width*0.08, width*0.01)));
-  }
+  // typoPG.background(0, 0, 0);
+    typoPG.blendMode(ADD);
+
+  //배경화면 색상(R,G,B);
+
+  typoPG.fill(255, 0, 0);
+  //폰트 색상(R,G,B);
+
+  typoPG.textFont(font);
+  typoPG.textSize(fontSize);
+  typoPG.push();
+  typoPG.textAlign(CENTER, CENTER);
+  typoPG.text(contents, width / 2-3, height / 2);
+  typoPG.pop();
+    typoPG.fill(0, 255, 0);
+
+    typoPG.push();
+  typoPG.textAlign(CENTER, CENTER);
+  typoPG.text(contents, width / 2, height / 2);
+  typoPG.pop();
+    typoPG.fill(0, 0, 255);
+      typoPG.push();
+  typoPG.textAlign(CENTER, CENTER);
+  typoPG.text(contents, width / 2+3, height / 2);
+  typoPG.pop();
+
 }
 
 function draw() {
-  background(255);
+  //   if (!permissionGranted) {
+  //   return;
+  // }
+  background(0);
   
- let locX = mouseX - width / 2;
-  let locY = mouseY - height / 2;
- ambientLight(100,150,100);
-  spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10/map(width,0,width,1,5));
-  spotLight(100, 255, 100, locX, locY, 100, 0, 0, -1, Math.PI ,10/map(width,0,width,0,5));
-    // rotateY(millis() / 1000);
+  createPG();
 
-  for (let i = 0; i < spheres.length; i++) {
-    spheres[i].update();
-    spheres[i].draw();
-  }
+  let tilesX = 10;
+  //그리드의 가로 칸 갯수
+  //Grid's row
+
+  let tilesY = 2;
+  //그리드의 세로 칸 갯수
+  //Grid's col
+
+  let tileW = width / tilesX;
+  let tileH = height / tilesY;
+
+  for (let y = 0; y < tilesY; y++) {
+    for (let x = 0; x < tilesX; x++) {
+      // WAVE
+      // let wave =((constrain(winMouseY,0,height) + (x * y)) * 0.01) * 100;
+      // SOURCE
+if(mouseX >= 20 && mouseX<=width-20 && mouseY >= 20 && mouseY <= height-20){
+	cursor('grab');
+           shake += random(-1,1);
 
 }
-
-class Sphere {
-
-  constructor(x, y, speedx, speedy, r) {
-    this.x = x;
-    this.y = y;
-    this.speedx = speedx;
-    this.speedy = speedy;
-    this.r = r;
-  }
-
-  update() {
-    this.x += this.speedx;
-    this.y += this.speedy;
-
-    if (this.x+this.r > width / 2 || this.x+this.r < -width / 2) {
-      this.speedx *= -1;
-    }
-    if (this.y+this.r > height / 2 || this.y+this.r< -height / 2) {
-      this.speedy *= -1;
+      let sx = x * tileW+shake;
+      let sy = y * tileH;
+      let sw = tileW;
+      let sh = tileH;
+      // DESTINATION
+      let dx = x * tileW;
+      let dy = y * tileH;
+      let dw = tileW;
+      let dh = tileH;
+      copy(typoPG, sx, sy, sw, sh, dx, dy, dw, dh);
     }
   }
-
-  draw() {
-    push();
-    translate(this.x, this.y);
-    sphere(this.r);
-    pop();
-
-  }
-}
-
-function windowResized() {
-	redraw();
-  resizeCanvas(windowWidth, windowHeight);
 }
