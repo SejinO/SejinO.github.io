@@ -13,7 +13,7 @@
 
 body {
 	color: white;
-	background-color: black;
+		background-color: black;
 	font-family: 'Helvetica Neue LT Std 73 Bold Extended';
 	font-weight: normal;
 }
@@ -32,11 +32,13 @@ a {
 	font-size: 3.75vw;
 	position: fixed;
 	list-style: none;
-	bottom: 1.2vw;
+	bottom: 1.4vw;
 	right: 2.7vw;
 	text-align: right;
 	padding-top: 2vw;
 	padding-right: 2vw;
+		z-index: 1;
+
 	/*	background-color: aquamarine;*/
 }
 
@@ -48,6 +50,7 @@ h1 {
 	left: 2.7vw;
 	/*		background-color: aquamarine;*/
 
+	z-index: 2;
 
 }
 
@@ -58,6 +61,7 @@ h3 {
 	top: 1.8vw;
 	right: 2.7vw;
 	/*		background-color: aquamarine;*/
+	z-index: 2;
 
 }
 
@@ -80,12 +84,15 @@ img {
 	transform: translate(-50%);
 	z-index: -1;
 }
-canvas{
-      position:absolute;
-    top:40%; left:50%;
-    transform: translate(-50%, -50%);
+
+canvas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	z-index: 0;
 }
+
 @media screen and (max-width : 767px) {
 	h1 {
 		font-size: 12vw;
