@@ -10,9 +10,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(420, 400);
+  createCanvas(375, 400);
   smooth();
-  typoPG = createGraphics(420, 400);
+  typoPG = createGraphics(375, 400);
   shake =0;
 // //DeviceOrientationEvent, DeviceMotionEvent
 //   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
@@ -105,7 +105,7 @@ function draw() {
       // SOURCE
 if(mouseX >= 20 && mouseX<=width-20 && mouseY >= 20 && mouseY <= height-20){
 	cursor('grab');
-           shake += random(-1,1);
+           shake += random(-0.5,0.5);
 
 }
       let sx = x * tileW+shake;
