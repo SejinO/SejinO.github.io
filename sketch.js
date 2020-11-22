@@ -10,9 +10,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(375, 400);
+  createCanvas(375, 375);
   smooth();
-  typoPG = createGraphics(375, 400);
+  typoPG = createGraphics(375, 375);
   shake =0;
 // //DeviceOrientationEvent, DeviceMotionEvent
 //   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
@@ -87,7 +87,7 @@ function draw() {
   
   createPG();
 
-  let tilesX = 10;
+  let tilesX = 12;
   //그리드의 가로 칸 갯수
   //Grid's row
 
@@ -103,9 +103,9 @@ function draw() {
       // WAVE
       // let wave =((constrain(winMouseY,0,height) + (x * y)) * 0.01) * 100;
       // SOURCE
-if(mouseX >= 20 && mouseX<=width-20 && mouseY >= 20 && mouseY <= height-20){
+if(mouseX >= 0 && mouseX<=width && mouseY >= 0 && mouseY <= height){
 	cursor('grab');
-           shake += random(-0.5,0.5);
+           shake += random(-1,1);
 
 }
       let sx = x * tileW+shake;
